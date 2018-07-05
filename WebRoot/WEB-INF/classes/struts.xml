@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" extends="struts-default">
+<interceptors>
+<interceptor name="logininter" class="com.hqulrx.controller.logininter"></interceptor>
+<interceptor-stack name="loginStack">
+<interceptor-ref name="defaultStack"></interceptor-ref>
+<interceptor-ref name="logininter"></interceptor-ref>
+</interceptor-stack>
+</interceptors>
+<action name="checkUser"  class="userAction" method="checkUser">
+<result name="success">/main.jsp</result>
+<result name="error">/index.jsp</result>
+</action>
+<action name="adduser"  class="userAction" method="adduser">
+<result name="success">/add_success.jsp</result>
+<result name="error">/add_fail.jsp</result>
+<interceptor-ref name="logininter"></interceptor-ref>
+</action>
+<action name="getAll"  class="userAction" method="getAll">
+<result name="success">/userdpstuinfo.jsp</result>
+<interceptor-ref name="logininter"></interceptor-ref>
+</action>
+<action name="logout"  class="userAction" method="logout">
+<result name="success">/index.jsp</result>
+</action>
+<action name="inputform"  class="userAction" method="inputform">
+<result name="success">/add_success.jsp</result>
+<result name="error">/add_fail.jsp</result>
+</action>
+<action name="updatepassword"  class="userAction" method="updatepassword">
+<result name="success">/index.jsp</result>
+<result name="error">/userpassword.jsp</result>
+<interceptor-ref name="defaultStack"></interceptor-ref>
+</action>
+<action name="addadmin"  class="adminAction" method="addadmin">
+<result name="success">/add_success.jsp</result>
+<result name="error">/add_fail.jsp</result>
+</action>
+<action name="appUsername"  class="adminAction" method="appUsername">
+<result name="success">/add_success.jsp</result>
+<result name="error">/add_fail.jsp</result>
+</action>
+<action name="inform"  class="adminAction" method="inform">
+<result name="success">/add_success.jsp</result>
+<result name="error">/add_fail.jsp</result>
+</action>
+<action name="checkAdmin"  class="adminAction" method="checkAdmin">
+<result name="success">/main2.jsp</result>
+<result name="error">/admin.jsp</result>
+</action>
+<action name="getall"  class="adminAction" method="getall">
+<result name="success">/admincheck.jsp</result>
+</action>
+<action name="getAller"  class="adminAction" method="getAller">
+<result name="success">/admincheckup.jsp</result>
+</action>
+<action name="Logout"  class="adminAction" method="Logout">
+<result name="success">/admin.jsp</result>
+</action>
+<action name="UPDATEpassword"  class="adminAction" method="UPDATEpassword">
+<result name="success">/admin.jsp</result>
+<result name="error">/adminpassword.jsp</result>
+</action>
+<action name="modiform"  class="adminAction" method="modiform">
+<result name="success">/adminmify.jsp</result>
+</action>
+<action name="checkedup"  class="adminAction" method="checkedup">
+<result name="success">/adminthink.jsp</result>
+</action>
+<action name="deleteone"  class="adminAction" method="deleteone">
+<result name="success">/add_success.jsp</result>
+</action>
+<action name="deleteform"  class="adminAction" method="deleteform">
+<result name="success">/add_success.jsp</result>
+</action>
+<action name="getUsername"  class="adminAction" method="getUsername">
+<result name="success">/userID.jsp</result>
+</action>
+<action name="deleteUsername"  class="adminAction" method="deleteUsername">
+<result name="success">/add_success.jsp</result>
+</action>
+<action name="Update"  class="adminAction" method="Update">
+<result name="success">/add_success.jsp</result>
+<result name="error">/add_fail.jsp</result>
+</action>
+<action name="Finaler"  class="adminAction" method="Finaler">
+<result name="success">/add_success.jsp</result>
+<result name="error">/add_fail.jsp</result>
+</action>
+<action name="checkImg" class="checkImgAction"></action>  
+</package>
+</struts>    
